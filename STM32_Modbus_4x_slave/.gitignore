@@ -1,0 +1,10 @@
+Debug/ 
+.settings/
+Drivers/
+.cproject
+.mxproject
+.project
+STM32_Modbus_4x_slave Debug.launch
+STM32_Modbus_4x_slave
+STM32G431RBTX_FLASH.ld
+Core/Startup
