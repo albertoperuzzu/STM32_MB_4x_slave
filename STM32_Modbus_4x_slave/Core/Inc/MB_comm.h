@@ -6,21 +6,21 @@
 #include "stdint.h"
 #include "string.h"
 
-#define MB_ID				1					// ModBus ID of the slave
-#define BUFFER_SIZE 		32					// Size of the buffer, keep a multiple of 16 for simplicity
-#define READ_H_REG			0x03				// MB Code for reading Holding Registers
-#define WRITE_SINGLE_REG 	0x06				// MB Code for writing a single Holding Register
-#define WRITE_MULTI_REG 	0x010				// MB Code for writing multiple Holding Registers
+#define MB_ID				        1					          // ModBus ID of the slave
+#define BUFFER_SIZE 		    32					        // Size of the buffer, keep a multiple of 16 for simplicity
+#define READ_H_REG			    0x03				        // MB Code for reading Holding Registers
+#define WRITE_SINGLE_REG 	  0x06				        // MB Code for writing a single Holding Register
+#define WRITE_MULTI_REG 	  0x010				        // MB Code for writing multiple Holding Registers
 
-extern uint16_t MB_Holding_reg[BUFFER_SIZE];	// Array of the global Holding Registers
-extern bool buildFrame;							// Flag for correct ID addressing
-extern bool frameReady;							// Flag for frame completion
-extern uint8_t MBFunc;							// Define the function of the received message
-extern uint8_t rxData;							// The last byte received from UART
-extern uint8_t globalCounter;					// Number of bytes consecutively received at the same address
-extern char ModbusRx[BUFFER_SIZE];				// Global buffer of bytes received
-extern char localModbusRx[BUFFER_SIZE];			// Local buffer of bytes received
-extern char ModbusTx[BUFFER_SIZE];				// Global buffer of bytes to transmit
+extern uint16_t MB_Holding_reg[BUFFER_SIZE];	  // Array of the global Holding Registers
+extern bool buildFrame;							            // Flag for correct ID addressing
+extern bool frameReady;							            // Flag for frame completion
+extern uint8_t MBFunc;							            // Define the function of the received message
+extern uint8_t rxData;							            // The last byte received from UART
+extern uint8_t globalCounter;					          // Number of bytes consecutively received at the same address
+extern char ModbusRx[BUFFER_SIZE];				      // Global buffer of bytes received
+extern char localModbusRx[BUFFER_SIZE];			    // Local buffer of bytes received
+extern char ModbusTx[BUFFER_SIZE];				      // Global buffer of bytes to transmit
 
 void Handle_MB_RX(void);
 void Handle_MB_TX(void);
